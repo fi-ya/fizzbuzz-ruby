@@ -33,6 +33,10 @@ This command creates 2 things:
 - a folder called spec containing a file **spec_helper.rb**
 - a hidden file called **.rspec**
 
+To run the test suite use the following command:
+`rspec`
+To format the test output to read like documentation and and tells exactly what behaviour we expect, use the following command: `rspec --format doc`
+
 ## Errors
 [(Back to top)](#table-of-contents)
 I kept getting this error when running this test. 
@@ -43,13 +47,14 @@ end
 ```
 ![Screenshot 2022-02-21 at 01 41 05](https://user-images.githubusercontent.com/69358550/154876827-e1ca99c7-e171-4c65-9a21-ab9331778806.png)
 
+**Solution**
+I was using `puts` to print the result in the terminal which is why the method when called worked. However i was not returning a value from the if statement so kept getting `nil`. In order for both my tests and print a value i assigned the print to the variable `result` which is what i returned.
 
-
+There are edge cases which i need to account for such as error handling for inputs that are not numbers. 
 
 ## Guard::RSpec
 [(Back to top)](#table-of-contents)
 It automatically & intelligently runs specs when files are modified.
-
 
 ## Resources 
 [(Back to top)](#table-of-contents)
@@ -57,6 +62,7 @@ It automatically & intelligently runs specs when files are modified.
 - [RSpec](https://rspec.info/)
 - [An introduction to TDD in Ruby](https://blog.makersacademy.com/an-introduction-to-tdd-in-ruby-72f0a8536509)
 - [Learn RSpec - Tutorials point](https://www.tutorialspoint.com/rspec/rspec_quick_guide.htm)
+- [Testing for Beginners](https://testing-for-beginners.rubymonstas.org/rspec/matchers.html)
 -[The Definitive RSpec Tutorial With Examples](https://www.rubyguides.com/2018/07/rspec-tutorial/)
 - [Guard::RSpec Github Doc](https://github.com/guard/guard-rspec)
 - [Guard usage doc](https://github.com/guard/guard#readme)
